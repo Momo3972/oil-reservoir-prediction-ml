@@ -1,5 +1,5 @@
 
-# README - Prédiction de la présence d’un réservoir pétrolier
+# Projet - Prédiction de la présence d’un réservoir pétrolier
 
 Ce document présente les étapes du projet : exploration, modélisation, optimisation, interprétation géologique (SHAP) et construction d’un pipeline déployable. Il constitue un support complet pour comprendre la démarche et les résultats.
 
@@ -59,8 +59,6 @@ Plusieurs modèles ont été testés afin d'évaluer leur capacité à prédire 
 | Random Forest (opt)        | **0.909** | **0.923** | 0.734  | **0.818** | **0.870** |
 | XGBoost (opt)              | 0.906    | 0.911     | 0.734  | 0.813 | 0.863   |
 
-> *Scores extraits directement du tableau comparatif final (jeu de test).*
-
 ---
 
 ### Analyse des modèles
@@ -98,7 +96,7 @@ Il servira donc de base au pipeline final et à l’interprétation géologique
 
 ---
 
-# 5 – Évaluation du modèle final
+# 5. Évaluation du modèle final
 
 L’évaluation du modèle Random Forest optimisé permet de mesurer ses performances réelles sur le jeu de test.  
 Plusieurs visualisations et métriques sont utilisées pour valider sa robustesse et sa cohérence géologique.
@@ -134,7 +132,7 @@ Plusieurs visualisations et métriques sont utilisées pour valider sa robustess
 
 ---
 
-## 5.3 Courbe ROC – Random Forest optimisé
+## 5.3 Courbe ROC - Random Forest optimisé
 
 ![ROC Curve](images/roc_curve.png)
 
@@ -189,7 +187,7 @@ Le **Random Forest optimisé** reste le meilleur choix car il combine :
 
 ---
 
-# 6. SHAP - Interprétabilité du modèle (Étape 11)
+# 6. SHAP - Interprétabilité du modèle
 
 SHAP est utilisé pour analyser **comment** et **pourquoi** le modèle Random Forest prédit la présence d’huile.  
 C’est une étape essentielle pour valider la *cohérence géologique* des décisions du modèle.
@@ -210,7 +208,7 @@ Chaque point représente un échantillon, avec :
 
 ## Interprétation géologique détaillée
 
-### 6.1.1 Seismic_Score — *Variable la plus influente*
+### 6.1.1 Seismic_Score - *Variable la plus influente*
 - Valeurs élevées -> **probabilité d’huile fortement augmentée**  
 - Valeurs faibles -> **tendance vers absence d’huile**  
 - *Cohérence géologique* : un signal sismique fort révèle des contrastes de densité, des pièges structuraux ou des interfaces caractéristiques des réservoirs.
@@ -288,7 +286,7 @@ Ce graphique illustre clairement **l’explication d’une prédiction individue
 
 ---
 
-## 6.3 Bar Plot SHAP — Importance moyenne des variables  
+## 6.3 Bar Plot SHAP - Importance moyenne des variables  
 *(Insérer l’image : images/shap_barplot.png)*
 
 ![SHAP Barplot](images/shap_barplot.png)
@@ -363,7 +361,7 @@ model.predict([nouveau_point])
 
 ---
 
-# 8. Sauvegarde & rechargement du modèle  
+# 8. Sauvegarde et rechargement du modèle  
 
 Le modèle final est sauvegardé sous :  
 **best_random_forest_oil_reservoir.joblib**
@@ -376,7 +374,7 @@ Il peut être directement intégré dans :
 
 ---
 
-# 9. Conclusion & perspectives  
+# 9. Conclusion et perspectives  
 
 ## Résultats principaux  
 - Le Random Forest optimisé fournit **excellentes performances**
